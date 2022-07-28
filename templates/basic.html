@@ -1,0 +1,81 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href="{% static 'w3.css' %}" >
+    
+    <script src="{% static 'tailwind.css' %}" %} ></script>
+
+
+    <title>{% block title %} {% endblock %}</title>
+      <style>
+
+          {% block css %} {% endblock %}
+    </style>
+  </head>
+
+
+
+  <body>
+  
+
+    <!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-teal w3-card w3-padding">
+
+    <a href="#" class="w3-bar-item w3-button w3-padding-large" style="font-weight: bold;">DACURATE</a>
+    <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Home</a>
+    {% if user.is_authenticated %}
+    <a href="/myprofile" class="w3-bar-item w3-button w3-padding-large w3-hide-small">profile</a>
+    <a href="/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small">logout</a>
+   
+
+
+    
+      
+    <div class="w3-dropdown-hover w3-hide-small w3-right">
+      <button class="w3-padding-large w3-button" title="More">
+        <div class="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
+            <img src="{% static 'user2.png' %}" class="object-cover w-full h-full" alt="avatar">
+        </div>
+        </button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="/profile" class="w3-bar-item w3-button">Profile</a>
+        <a href="/logout" class="w3-bar-item w3-button">Logout</a>
+        
+        </div>
+        </div>
+
+        {% else %}
+        <a href="/register" class="w3-bar-item w3-button w3-padding-large {% block registeractive %} {% endblock registeractive %}">Register</a>
+      
+        <a href="/login" class="w3-bar-item w3-button w3-padding-large {% block loginactive %} {% endblock loginactive %}">Login</a>
+    
+        
+       
+        {% endif %}
+
+  
+</div>
+</div>
+
+
+
+
+
+    
+   
+<br>
+</body>
+{% block body %} {% endblock %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  {% block js %} {% endblock %}
+</html>

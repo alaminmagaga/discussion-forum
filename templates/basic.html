@@ -28,8 +28,8 @@
 <div class="w3-top">
   <div class="w3-bar w3-teal w3-card w3-padding">
 
-    <a href="#" class="w3-bar-item w3-button w3-padding-large" style="font-weight: bold;">DACURATE</a>
-    <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Home</a>
+    <a href="{% url 'Forum' %}" class="w3-bar-item w3-button w3-padding-large" style="font-weight: bold;">DACURATE</a>
+    <a href="{% url 'Forum' %}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Home</a>
     {% if user.is_authenticated %}
     <a href="/myprofile" class="w3-bar-item w3-button w3-padding-large w3-hide-small">profile</a>
     <a href="/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small">logout</a>

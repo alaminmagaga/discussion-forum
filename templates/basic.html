@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-   
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <link rel="stylesheet" href="{% static 'w3.css' %}" >
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -47,7 +48,7 @@ body {font-family: "Lato", sans-serif}
         </div>
         </button>
     <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="/profile" class="w3-bar-item w3-button">Profile</a>
+        <a href="/myprofile" class="w3-bar-item w3-button">Profile</a>
         <a href="/logout" class="w3-bar-item w3-button">Logout</a>
         
         </div>
@@ -70,10 +71,10 @@ body {font-family: "Lato", sans-serif}
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
 <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
-  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+  <a href="{% url 'Forum' %}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">DACURATE</a>
+  <a href="{% url 'Forum' %}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">HOME</a>
+  <a href="/myprofile" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PROFILE</a>
+  <a href="/logout" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LOGOUT</a>
 </div>
 
 
